@@ -1,0 +1,10 @@
+{
+  "extends": "./playground/.nuxt/tsconfig.json",
+  "compilerOptions": {
+    "paths": {
+      "#imports": [
+        ".nuxt/imports"
+      ],
+    }
+  }
+}
