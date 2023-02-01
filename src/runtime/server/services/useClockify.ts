@@ -8,7 +8,9 @@ type requestMethods = "get" | "post" | "put" | "patch" | "delete";
 class Clockify {
   private baseUrl = "https://api.clockify.me/api/v1";
   private activeWorkspace: null | string = null;
-  constructor(private apiKey: string) {}
+  constructor(private apiKey: string) {
+    console.log(this.apiKey);
+  }
 
   public request(
     endpoint: string,
@@ -64,7 +66,7 @@ class Clockify {
 }
 
 const useClockify = () => {
-  return new Clockify(runtimeConfig.clockifyApiToken);
+  return new Clockify(runtimeConfig.clockifyApi);
 };
 
 const getResultFromIso = (duration: string, pattern: RegExp) => {
