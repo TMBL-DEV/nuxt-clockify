@@ -8,9 +8,7 @@ type requestMethods = "get" | "post" | "put" | "patch" | "delete";
 class Clockify {
   private baseUrl = "https://api.clockify.me/api/v1";
   private activeWorkspace: null | string = null;
-  constructor(private apiKey: string) {
-    console.log(this.apiKey);
-  }
+  constructor(private apiKey: string) {}
 
   public request(
     endpoint: string,

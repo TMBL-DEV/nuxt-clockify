@@ -34,12 +34,7 @@ export default defineNuxtModule<ModuleOptions>({
 
     nuxt.hook("nitro:config", (nitroConfig) => {
       nitroConfig.alias = nitroConfig.alias || {};
-      nitroConfig.externals = defu(
-        typeof nitroConfig.externals === "object" ? nitroConfig.externals : {},
-        {
-          inline: [resolve("./runtime")],
-        }
-      );
+
       nitroConfig.alias["#clockify"] = resolve("./runtime/server/services");
     });
 
